@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/payment.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/customer/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/customer/search.php" method="post">
+                <div class="search-bar">
+                    <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                    <button type="submit" name="search">Search</button>
+                </div>
+            </form>
+            <div class="user">
+                <a href="profile.php"><img src="/project/customer/html/photo/user.png">
+            </div>
+            <div class="cart">
+                <a href="/project/customer/cart.php"><img src="/project/customer/html/photo/cartt.png"></a>
+            </div>
+        </div>
+        <div class="payment">
+            <text> PAYMENT METHOD </text>
+        </div>
+        
+        <form action="/project/customer/payment.php" method="post">
+            <div class="payment-body">
+                <div class="payment-container">       
+                    <div class="billing-info-container">
+                        <div class="method-container">
+                            <img src="/project/customer/html/photo/mastercard-logo.png">
+                            <img src="/project/customer/html/photo/visa-logo.png">
+                        </div>
+                        <h2>Billing Information</h2><br>
+                        <div class="form-group">
+                            <label for="fullName">Fullname:</label>
+                            <input type="text" name="fullname" placeholder="<?php echo $fullname ?>">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="billing_address">Billing Address:</label>
+                            <input type="text" name="billing_address" placeholder="<?php echo $billing_address ?>">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" name="province" placeholder="<?php echo $province ?>">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="zipcode">Zipcode:</label>
+                            <input type="text" name="zipcode" placeholder="<?php echo $postcode ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <input type="text" name="country" placeholder="<?php echo $country ?>">
+                        </div>
+                        
+                    </div>
+                    <div class="credit-info-container">
+                        <h2>Credit Card Information</h2><br>
+                        <div class="form-group">
+                            <label for="payment_method">Payment method:</label>
+                            <select name="payment_method">
+                                <option value="-">-</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="visa">Visa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Cardholders Name:</label>
+                            <input type="text" name="cardhd_fullname" placeholder="<?php echo $fullname ?>">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="card_number">Card Number:</label>
+                            <input type="text" name="card_number" placeholder="xxxx xxxx xxxx xxxx" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Month">Exp Month:</label>
+                            <input type="text" name="expMonth" placeholder="mm" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="year">Exp Year:</label>
+                            <input type="text" name="expYear" placeholder="yyyy" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="CVC">CVC Number:</label>
+                                <input type="text" name="CVC" placeholder="xxx" >
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="return">Return to store</button>
+                            <button type="submit" name="proceed">Proceed</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </form> 
+    </body>
+</html>

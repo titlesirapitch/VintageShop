@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>    
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/admin/css/viewPromo.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/admin/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/admin/search.php" method="post">
+                <div class="search-bar">
+                    <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                    <button type="submit" name="search">Search</button>
+                </div>
+            </form>
+            <div class="head_admin">
+                <div class="head_admin">
+                    <form action="/project/admin/logout.php" method="post">
+                        <button type="submit" name="admin">ADMIN</button>
+                        <button type="submit" name="logout">LOG OUT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul>
+                <li><a href="/project/admin/viewOrder.php">View Order</a></li>
+                <li><a href="/project/admin/html/add_product.html">Add Product</a></li>
+                <li class="active"><a href="/project/admin/addPromo.php">Add Promocode</a></li>
+            </ul>
+        </div>
+        <div class="add_promo">
+            <text> ADD PROMOCODE </text>
+        </div>
+            <section>
+                <div class="promo-container">
+                    
+                    <div class="table-container">
+                    <table id="promoCodeTable">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Type</th>
+                                <th>Discount</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Promo codes will be dynamically added here -->
+                            <?php
+                                $srch_promo = "SELECT * FROM promo_code";
+                                if($result_promo = $mysqli->query($srch_promo)){
+                                    while($row = $result_promo->fetch_array()){
+                                        echo "<tr>";
+                                        echo "<td>".$row['code']."</td>";
+                                        echo "<td>".$row['code_type']."</td>";
+                                        if($row["code_type"] == "percentage"){
+                                            echo "<td>".$row['discountPercentage']."</td>";
+                                        }else{
+                                            echo "<td>".$row['discountAmount']."</td>";
+                                        }
+                                        echo "<td>".$row['start_date']."</td>";
+                                        echo "<td>".$row['end_date']."</td>";
+                                        echo "<td>".$row['amount']."</td>";
+                                        echo "<td><a href='delinfo.php?id=".$row['code_ID']."'>Delete</a></td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                    </div>
+                
+                    <div class="add-promo-container">
+                        <h2>Add Promo Code</h2><br>
+                        <form action="/project/admin/addPromo.php" method="post">
+                            <label for="code">Code:</label><br>
+                            <input type="text" id="code" class="promo-input" name="code" placeholder="Enter promo code" ><br>
+                            
+                            <label for="code">Code Type:</label><br>
+                            <select id="codetypeInput" class="promo-input" name="code_type">
+                                <option value="-">-</option>
+                                <option value="Percentage">Percentage</option>
+                                <option value="Amount">Amount</option>
+                            </select><br>
+                    
+                            <label for="discount">Discount:</label><br>
+                            <input type="number" id="discount" class="promo-input" name="discount" placeholder="Enter discount" ><br>
+                    
+                            <label for="startDate">Start Date:</label><br>
+                            <input type="date" id="startDate" class="promo-input" name="sDate" ><br>
+                    
+                            <label for="endDate">End Date:</label><br>
+                            <input type="date" id="endDate" class="promo-input" name="eDate" ><br>
+                    
+                            <label for="amount">Amount of Code:</label><br>
+                            <input type="number" id="amount" class="promo-input" name="amount" placeholder="Enter amount" ><br>
+                    
+                            <button type="submit" class="apply-btn" name="addCode">Add Promo Code</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+    </body>
+</html>

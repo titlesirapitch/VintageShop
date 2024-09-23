@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/profile_edit.css">
+     </head>
+
+     <body>
+         <div class="header">
+             <div class="logo">
+                 <a href="/project/customer/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+             </div>
+             <form action="/project/customer/search.php" method="post">
+              <div class="search-bar">
+                  <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                  <button type="submit" name="search">Search</button>
+              </div>
+            </form>
+             <div class="user">
+                 <a href="/project/customer/profile.php"><img src="/project/customer/html/photo/user.png">
+             </div>
+             <div class="cart">
+                 <a href="/project/customer/cart.php"><img src="/project/customer/html/photo/cartt.png"></a>
+             </div>
+         </div>
+         <div>
+             <ul>
+                 <li class="active"><a href="/project/customer/profile.php">My Profile</a></li>
+                 <li><a href="/project/customer/order.php">My Order</a></li>
+             </ul>
+         </div>
+         
+         <div class="Myprofile">
+             <text> MY PROFILE </text>
+         </div>
+         <form action="/project/customer/profile.php" method="post">
+         <div class="profile-body">
+             <div class="profile-container">
+                 <div class="photo-container">
+                   <img id="imagePreview" class="image-preview" src="/project/customer/<?php echo $_SESSION['image'] ?>">
+                 </div>
+                 <!-- /project/customer/html/photo/<?php echo $_SESSION['image']?> -->
+                 <div class="personal-info-container">
+                   <h2>Personal Information</h2><br> 
+                     <div class="form-group">
+                       <label for="name">Name:</label>
+                       <input type="text" name="firstname" value="<?php echo $_SESSION['firstname']; ?>" disabled>
+                     </div>
+             
+                     <div class="form-group">
+                       <label for="surname">Surname:</label>
+                       <input type="text" name="lastname" value="<?php echo $_SESSION['lastname']; ?>" disabled>
+                     </div>
+             
+                     <div class="form-group">
+                       <label for="dob">Date of Birth:</label>
+                       <input type="date" name="dob" value="<?php echo $_SESSION['dob']; ?>" disabled>
+                     </div>
+                 </div>
+             
+                 <div class="contact-info-container">
+                   <h2>Contact Information</h2><br>
+                     <div class="form-group">
+                       <label for="email">Email:</label>
+                       <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" disabled>
+                     </div>
+             
+                     <div class="form-group">
+                       <label for="mobile">Mobile Number:</label>
+                       <input type="tel" name="phone" value="<?php echo $_SESSION['phone']; ?>" disabled>
+                     </div>
+                 </div>
+                 
+                 <div class="address-info-contrainer">
+                     <h2>Address Information</h2><br>
+                       <div class="form-group">
+                         <label for="address11">Address_1 Line1:</label>
+                         <input type="text" name="address11" value="<?php echo $_SESSION['address11']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="address12">Address_1 Line2:</label>
+                         <input type="text" name="address12" value="<?php echo $_SESSION['address12']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="postcode1">Postcode_1:</label>
+                         <input type="text" name="postcode1" value="<?php echo $_SESSION['postcode1']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="state1">State/Province_1:</label>
+                         <input type="text" name="state1" value="<?php echo $_SESSION['state1']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="country1">Country_1:</label>
+                         <input type="text" name="country1" value="<?php echo $_SESSION['country1']; ?>" disabled>
+                       </div>
+                   </div>
+ 
+                   <div class="address-info-contrainer"><br><br>
+                       <div class="form-group">
+                         <label for="address21">Address_2 Line1:</label>
+                         <input type="text" name="address21" value="<?php echo $_SESSION['address21']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="address12">Address_2 Line2:</label>
+                         <input type="text" name="address22" value="<?php echo $_SESSION['address22']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="postcode2">Postcode_2:</label>
+                         <input type="text" name="postcode2" value="<?php echo $_SESSION['postcode2']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="state1">State/Province_2:</label>
+                         <input type="text" name="state2" value="<?php echo $_SESSION['state2']; ?>" disabled>
+                       </div>
+                       <div class="form-group">
+                         <label for="country1">Country_2:</label>
+                         <input type="text" name="country2" value="<?php echo $_SESSION['country2']; ?>" disabled>
+                       </div>
+                       <br>
+                       <div class="form-group">
+                           <button type="submit" name="edit">Edit</button>
+                           <button type="submit" name="logout">Logout</button>
+                       </div>
+                   </div>
+                   <div class="membership-container">
+                      <div class="form-group">
+                          <label for="member"><h1>Membership</h1></label><br>
+                          <label for="member">Your Member ID:</label>
+                          <?php echo str_pad($_SESSION['user_id'], 10, "0", STR_PAD_LEFT)?><br><br> 
+                      </div>
+                   </div>
+               </div>
+            </div>
+        </form>
+    </body>
+</html>

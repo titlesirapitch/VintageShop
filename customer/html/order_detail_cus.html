@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/order_detail.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/customer/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/customer/search.php" method="post">
+              <div class="search-bar">
+                  <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                  <button type="submit" name="search">Search</button>
+              </div>
+            </form>
+            <div class="user">
+                <a href="/project/customer/profile.php"><img src="/project/customer/html/photo/user.png">
+            </div>
+            <div class="cart">
+                <a href="/project/customer/cart.php"><img src="/project/customer/html/photo/cartt.png"></a>
+            </div>
+        
+        </div>
+        <div>
+                <ul>
+                    <li><a href="/project/customer/profile.php">My Profile</a></li>
+                    <li class="active"><a href="/project/customer/order.php">My Order</a></li>
+                </ul>
+            </div>
+        <div class="pd">
+            <text> MY ORDER DETAIL </text>
+        </div>
+        <div class="profile-body">
+            <div class="profile-container">
+                <div class="photo-container">
+                  <img id="imagePreview" class="image-preview" src="/project/admin/<?php echo $image; ?>">
+                </div>
+            
+                <div class="personal-info-container">
+                  <h2>Product Information</h2><br>
+                  <div class="form-group">
+                    <label for="name">Product Name:</label>
+                    <text name="productName"><?php echo $prod_name; ?></text>
+                  </div>
+          
+                  <div class="form-group">
+                    <label for="price">price:</label>
+                    <text name="productPrice"><?php echo "$prod_price ฿ THB"; ?></text>
+                  </div>
+          
+                  <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <text name="productAmount"><?php echo $prod_amount; ?></text>
+                  </div>
+                </div>
+            
+                <div class="address-info-contrainer">
+                    <h2>Address Information</h2><br>
+                      <div class="form-group">
+                        <label for="address1">Address Line1:</label>
+                        <text name="address1"><?php echo $addressl1; ?></text> 
+                      </div>
+                      <div class="form-group">
+                        <label for="address2">Address Line2:</label>
+                        <text name="address2"><?php echo $addressl2; ?></text>
+                      </div>
+                      <div class="form-group">
+                        <label for="postcode">Postcode:</label>
+                        <text name="postcode1"><?php echo $postcode; ?></text>
+                      </div>
+                      <div class="form-group">
+                        <label for="state">State/Province:</label>
+                        <text name="state1"><?php echo $state; ?></text>
+                      </div>
+                      <div class="form-group">
+                        <label for="country">Country:</label>
+                        <text name="country"><?php echo $country; ?></text>
+                      </div>
+                      <div class="form-group">
+                        <label for="track">Track NO.:</label>
+                        <text name="track"><?php echo $trachNo; ?></text>
+                      </div>
+                  </div>
+        
+
+              </div>
+              </div>
+
+    </body>
+</html>

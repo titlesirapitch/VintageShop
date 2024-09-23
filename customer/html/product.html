@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/product.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/customer/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/customer/search.php" method="post">
+              <div class="search-bar">
+                  <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                  <button type="submit" name="search">Search</button>
+              </div>
+            </form>
+            <div class="user">
+                <a href="/project/customer/profile.php"><img src="/project/customer/html/photo/user.png">
+            </div>
+            <div class="cart">
+                <a href="/project/customer/cart.php"><img src="/project/customer/html/photo/cartt.png"></a>
+            </div>
+        </div>
+        <div class="pd">
+            <text> PRODUCT DETAIL </text>
+        </div>
+        <div class="profile-body">
+            <div class="profile-container">
+                <div class="photo-container">
+                  <img id="imagePreview" class="image-preview" src="/project/admin/<?php echo $image; ?>">
+                </div>
+            
+                <div class="personal-info-container">
+                  <h2>Product Information</h2><br>
+                  <div class="form-group">
+                    <label for="productname">Product Name:</label>
+                    <text name="productName"><?php echo $prod_name; ?></text>
+                </div>
+          
+                  <div class="form-group">
+                    <label for="productPrice">price:</label>
+                    <text name="productPrice"><?php echo "$prod_price ฿ THB"; ?></text><br>
+                  </div>
+          
+                  <div class="form-group">
+                    <label for="productAmount">Amount:</label>
+                    <text><?php echo $prod_amount; ?></text>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="productdescription">Description:</label>
+                    <text><?php echo $prod_detail; ?></text>
+                  </div>
+                  
+                  <?php
+                    $pID = $_SESSION['pID'];
+                    $page = "product.php?id=$pID";
+                    echo "<div class='form-group'>
+                            <a href='/project/customer/addCart.php?id=$pID&page=$page'><button type='button' name='addcart'>Add to cart</button></a>
+                          </div>";
+                  ?>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

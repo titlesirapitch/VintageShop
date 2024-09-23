@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/admin/css/product.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/admin/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/admin/search.php" method="post">
+                <div class="search-bar">
+                    <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                    <button type="submit" name="search">Search</button>
+                </div>
+            </form>
+            <div class="head_admin">
+                <a href="/project/admin/viewOrder.php"><button>ADMIN</button></a>
+            </div>          
+        </div>
+        <div class="pd">
+            <text> PRODUCT DETAIL </text>
+        </div>
+            <div class="product-body">
+                <div class="product-container">
+                    <div class="photo-container">
+                    <img id="imagePreview" class="image-preview" src="/project/admin/<?php echo $image ?>">
+                    </div>
+                
+                    <div class="personal-info-container">
+                    <h2>Product Information</h2><br>
+                    <div class="form-group">
+                        <label for="productname">Product Name:</label>
+                        <text name="productName"><?php echo $prod_name; ?></text>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="productPrice">price:</label>
+                        <text  name="productPrice"><?php echo "$prod_price ฿ THB"; ?></text><br>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="productAmount">Amount:</label>
+                        <text  name="productAmount"><?php echo $prod_amount; ?></text>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productdescription">Description:</label>
+                        <text name="productdescription"><?php echo $prod_detail; ?></text>
+                    </div>
+                    
+                    <?php
+                        $pID = $_SESSION['pID'];
+                        echo "<div class='form-group'>
+                            <a href='/project/admin/productEdit.php?id=$pID'><button type='submit' name='edit'>Edit Product Detail</button></a>
+                        </div>";
+                    ?>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

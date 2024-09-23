@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VINTAGE SHIRT SHOP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/project/admin/css/productEdit.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="/project/admin/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+      </div>
+      <form action="/project/admin/search.php" method="post">
+        <div class="search-bar">
+            <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+            <button type="submit" name="search">Search</button>
+        </div>
+      </form>
+      <div class="head_admin">
+        <a href="vieworder.html"><button>ADMIN</button></a>
+      </div>
+    </div>
+    <div class="editproduct">
+      <text> EDIT PRODUCT </text>
+    </div>
+    <div class="editpd-body">
+      <div class="editpd-container">
+        <div class="photo-container">
+          <img id="imagePreview" class="image-preview" src="/project/admin/html/photo/photo_logo.png" >
+        </div>
+
+        <form action="/project/admin/productEdit.php" method="post" enctype="multipart/form-data">
+          <div class="product-info-container">
+            <div class="form-group">
+              <label for="photo">Change Photo:</label>
+              <input type="file" name="photo" id="photo" onchange="previewImage()">
+            </div>
+
+            <div class="form-group">
+              <label for="name">Product Name:</label>
+              <input type="text" name="productName" placeholder="name">
+            </div>
+
+            <div class="form-group">
+              <label for="type">Product Type:</label>
+              <select type="text" name="producttype">
+                <option value="-">-</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="price">price:</label>
+              <input type="number" name="productPrice" placeholder="price">
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Amount:</label>
+              <input type="number" name="productAmount" placeholder="amount">
+            </div>
+
+            <div class="form-group">
+              <label for="detail">Description:</label>
+              <textarea type="number" name="productDetails" rows="4" cols="30"></textarea><br><br>
+              <button type="submit" name="save">Save change</button>
+              <button type="submit" name="cancel">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function previewImage() {
+        var fileInput = document.getElementById("photo");
+        var imagePreview = document.getElementById("imagePreview");
+
+        if (fileInput.files && fileInput.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+          };
+
+          reader.readAsDataURL(fileInput.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

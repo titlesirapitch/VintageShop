@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VINTAGE SHIRT SHOP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/project/admin/css/productAdd.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="/project/admin/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+      </div>
+      <form action="/project/admin/search.php" method="post">
+        <div class="search-bar">
+            <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+            <button type="submit" name="search">Search</button>
+        </div>
+      </form>
+      <div class="head_admin">
+        <div class="head_admin">
+          <form action="/project/admin/logout.php" method="post">
+              <button type="submit" name="admin">ADMIN</button>
+              <button type="submit" name="logout">LOG OUT</button>
+          </form>
+      </div>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/project/admin/viewOrder.php">View Order</a></li>
+        <li class="active"><a href="/project/admin/productAdd.php">Add Product</a></li>
+        <li><a href="/project/admin/addPromo.php">Add Promocode</a></li>
+      </ul>
+    </div>
+    <div class="addproduct">
+      <text> ADD PRODUCT </text>
+    </div>
+    <div class="addpd-body">
+        <div class="addpd-container">
+            <div class="photo-container">
+                <img id="imagePreview" class="image-preview" src="photo/photo_logo.png" >
+            </div>
+            <form action="/project/admin/productAdd.php" method="post" enctype="multipart/form-data">
+                <div class="product-info-container">
+                    <div class="form-group">
+                        <label for="photo">Change Photo:</label>
+                        <input type="file" name="photo" id="photo" onchange="previewImage()" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Product Name:</label>
+                        <input type="text" name="productName" placeholder="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Product Type:</label>
+                        <select type="text" name="producttype">
+                            <option value="-">-</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">price:</label>
+                        <input type="number" name="productPrice" placeholder="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" name="productAmount" placeholder="amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="detail">Description:</label>
+                        <textarea type="text" name="productDetails" rows="4" cols="30" required></textarea><br><br>
+                        <button type="submit" name="add">Add Product</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      function previewImage() {
+        var fileInput = document.getElementById("photo");
+        var imagePreview = document.getElementById("imagePreview");
+
+        if (fileInput.files && fileInput.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+          };
+
+          reader.readAsDataURL(fileInput.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

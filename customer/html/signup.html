@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>   
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/signup.css"> 
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="box-register">
+                    <div class="logo">
+                        <img src="photo/logo.png">
+                    </div>
+                    <form action="/project/customer/signup.php" method="post">
+                        <div class="input-group">
+                            <div class="input-field">
+                                <input type="text" class="input-box" name="username" required>
+                                <label for="regUsername">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" class="input-box" name="email" required>
+                                <label for="regEmail">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input-box" name="password" required>
+                                <label for="regPassword">Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input-box" name="confPass" required>
+                                <label for="regConfirmPassword">Confirm Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="input-submit" name="signup" value="Sign Up" required></a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="haveaccount">
+                        <a href="/project/login.html">I'M ALREADY HAVE ACCOUNT</a>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

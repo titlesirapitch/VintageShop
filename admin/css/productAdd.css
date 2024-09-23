@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    
+}
+
+/* ##### header ##### */
+
+.header{
+    background: #322C2C;
+    font-family: Arial;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    position: relative;
+}
+.logo{
+    position: relative;
+    transform: translateY(5px);
+    right: 27%;
+}
+.logo img {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+
+/* ##### search ##### */
+
+.search-bar {
+    display: flex;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    width: 500px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #5d5d5d;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0c0202;
+}
+
+
+/* ##### Navigation Bar ##### */
+
+ul{
+    list-style-type: none;
+    background-color: rgba(148, 148, 148, 0.45);
+    height: 30px;
+    width: 100%;
+}
+li{
+    float: left;
+    border: 0px;
+    position: relative;
+    left: 5%;
+    padding: 0px 30px 0px 30px;
+}
+li a{
+    color: #000;
+    display: block;
+    text-align: center;
+    padding: 3px 16px;
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+li a:hover:not(.active){
+    color: rgba(17, 7, 7, 0.765)
+}
+.active{
+    text-decoration: underline;
+}
+ /*### Admin ###*/
+
+.head_admin{
+    position: relative;
+    left: 26.5%;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    
+}
+.head_admin button{
+    color: gold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    background-color: firebrick;
+    border: goldenrod solid 2px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+/* ### Add product text ###*/
+
+.addproduct{
+    width: 197px;
+    height: 21px;
+    position: relative;
+    left: 5%;
+    transform: translateY(45px);
+}
+.addproduct text{
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-wrap: nowrap;
+}
+
+/* ### Add product ### */
+
+.addpd-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addpd-container {
+    display: flex;
+    background-color: rgba(148, 148, 148, 0.45);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width:650px;
+    max-width: 100%;
+    box-sizing: border-box;
+    transform: translateY(10%);
+}
+
+    .photo-container,
+    .product-info-container {
+    flex: 1;
+    padding: 20px;
+}
+    .product-info-container select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    .photo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+    .form-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+    .form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+    .form-group input{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+    .form-group textarea{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    .form-group button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: translateX(100%);
+}
+
+    .form-group button:hover {
+    background-color: #45a049;
+}
+
+    .form-group input[type="file"] {
+    margin-top: 4px;
+}
+
+    .image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 4px;
+}

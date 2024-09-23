@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VINTAGE SHIRT SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/customer/css/profile_edit.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/project/customer/homepage.php"><img src="/project/customer/html/photo/logo.png"></a>
+            </div>
+            <form action="/project/customer/search.php" method="post">
+              <div class="search-bar">
+                  <input type="search" name="searchTxt" placeholder="Search for product by brands, model..">
+                  <button type="submit" name="search">Search</button>
+              </div>
+            </form>
+            <div class="user">
+                <a href="/project/customer/profile.php"><img src="/project/customer/html/photo/user.png">
+            </div>
+            <div class="cart">
+                <a href="/project/customer/cart.php"><img src="/project/customer/html/photo/cartt.png"></a>
+            </div>
+        </div>
+        <div>
+            <ul>
+                <li class="active"><a href="/project/customer/profile.php">My Profile</a></li>
+                <li><a href="/project/customer/order.php">My Order</a></li>
+            </ul>
+        </div>
+        <div class="Myprofile">
+            <text> EDIT MY PROFILE </text>
+        </div>
+        <form action="/project/customer/profileEdit.php" method="post" enctype="multipart/form-data">
+          <div class="profile-body">
+              <div class="profile-container">
+                  <div class="photo-container">
+                    <img id="imagePreview" class="image-preview" src="photo/user.png">
+                  </div>
+              
+                  <div class="personal-info-container">
+                    <h2>Personal Information</h2><br>
+                    <div class="form-group">
+                      <label for="photo">Change Photo:</label>
+                      <input type="file" id="photo" name="photo" onchange="previewImage()">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" name="firstname" placeholder="Enter your name">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="surname">Surname:</label>
+                      <input type="text" name="lastname" placeholder="Enter your surname">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="dob">Date of Birth:</label>
+                      <input type="date" name="dob">
+                    </div>
+                  </div>
+              
+                  <div class="contact-info-container">
+                    <h2>Contact Information</h2><br>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" placeholder="Enter your email">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="mobile">Mobile Number:</label>
+                      <input type="text" name="phone" placeholder="Enter your mobile number">
+                    </div>
+                  </div>
+                  
+                  <div class="address-info-contrainer">
+                      <h2>Address Information</h2><br>
+                      <div class="form-group">
+                        <label for="address11">Address_1 Line1:</label>
+                        <input type="text" name="address11" placeholder="Enter your address_1 line1">
+                      </div>
+                      <div class="form-group">
+                        <label for="address12">Address_1 Line2:</label>
+                        <input type="text" name="address12" placeholder="Enter your address_1 line2">
+                      </div>
+                      <div class="form-group">
+                        <label for="postcode1">Postcode_1:</label>
+                        <input type="text" name="postcode1" placeholder="Enter your postcode1">
+                      </div>
+                      <div class="form-group">
+                        <label for="state1">State/Province_1:</label>
+                        <input type="text" name="state1" placeholder="Enter your state/province_1">
+                      </div>
+                      <div class="form-group">
+                        <label for="country1">Country_1:</label>
+                        <input type="text" name="country1" placeholder="Enter your country_1">
+                      </div>
+                    </div>
+
+                    <div class="address-info-contrainer"><br><br>
+                        <div class="form-group">
+                          <label for="address21">Address_2 Line1:</label>
+                          <input type="text" name="address21" placeholder="Enter your address_2 line1">
+                        </div>
+                        <div class="form-group">
+                          <label for="address12">Address_2 Line2:</label>
+                          <input type="text" name="address22" placeholder="Enter your address_2 line2">
+                        </div>
+                        <div class="form-group">
+                          <label for="postcode2">Postcode_2:</label>
+                          <input type="text" name="postcode2" placeholder="Enter your postcode_2">
+                        </div>
+                        <div class="form-group">
+                          <label for="state1">State/Province_2:</label>
+                          <input type="text" name="state2" placeholder="Enter your state/province_2">
+                        </div>
+                        <div class="form-group">
+                          <label for="country1">Country_2:</label>
+                          <input type="text" name="country2" placeholder="Enter your country_2">
+                        </div><br>
+                        <div class="form-group">
+                            <button type="submit" name="save">Save Changes</button>
+                            <button type="submit" name="return">Return</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+          <script>
+            function previewImage() {
+              var fileInput = document.getElementById('photo');
+              var imagePreview = document.getElementById('imagePreview');
+        
+              if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+        
+                reader.onload = function (e) {
+                  imagePreview.src = e.target.result;
+                };
+        
+                reader.readAsDataURL(fileInput.files[0]);
+              }
+            }
+          </script>
+    </body>
+</html>
